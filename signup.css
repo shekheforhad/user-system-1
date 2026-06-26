@@ -105,3 +105,23 @@ button:active {
     color: #0056b3;
     text-decoration: underline;
 }
+
+/* পাসওয়ার্ড টগল স্টাইল */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+.password-wrapper input {
+    width: 100% !important;
+    padding-right: 40px !important; /* আইকনের জন্য ডান পাশে জায়গা রাখা */
+    box-sizing: border-box;
+}
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+}

@@ -15,8 +15,20 @@
     <!-- নতুন ইনপুট ফিল্ডসমূহ -->
     <input type="text" id="fullName" placeholder="Full Name" required>
     <input type="email" id="email" placeholder="Email" required>
+ <!-- পাসওয়ার্ড ফিল্ডের চারপাশে এই কন্টেইনারটি দিন -->
+<!-- পাসওয়ার্ড ফিল্ড -->
+<div class="password-wrapper">
     <input type="password" id="password" placeholder="Password" required>
-    
+    <span id="togglePassword" class="password-toggle">👁️</span>
+</div>
+
+<!-- নতুন কনফার্ম পাসওয়ার্ড ফিল্ড -->
+<div class="password-wrapper">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+    <span id="toggleConfirmPassword" class="password-toggle">👁️</span>
+</div>
+
+
     <!-- জেন্ডার সিলেক্টর ড্রপডাউন -->
     <select id="gender" required class="select-field">
         <option value="">Select Gender</option>
