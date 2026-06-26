@@ -24,8 +24,9 @@
 
 <!-- Firebase SDK core এবং Authentication মডিউল যুক্ত করা -->
 <script type="module">
-  import { initializeApp } from "https://gstatic.com";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://gstatic.com";
+  // index.html ফাইলে ভুল ইমপোর্টের জায়গায় এটি ব্যবহার করুন:
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
   // আপনার Firebase থেকে পাওয়া আসল কনফিগারেশন এখানে বসান
   const firebaseConfig = {

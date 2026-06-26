@@ -16,8 +16,9 @@
     <button id="btnLogout">Log Out</button>
 
 <script type="module">
-  import { initializeApp } from "https://gstatic.com";
-  import { getAuth, signOut, onAuthStateChanged } from "https://gstatic.com";
+  // dashboard.html ফাইলে ভুল ইমপোর্টের জায়গায় এটি ব্যবহার করুন:
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
   // একই কনফিগারেশন এখানেও বসাতে হবে
   const firebaseConfig = {
