@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; background: red; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>স্বাগতম! আপনি সফলভাবে লগইন করেছেন।</h1>
+    <p>এটি আপনার সুরক্ষিত ড্যাশবোর্ড পেজ।</p>
+    <button id="btnLogout">Log Out</button>
+
+<script type="module">
+  import { initializeApp } from "https://gstatic.com";
+  import { getAuth, signOut, onAuthStateChanged } from "https://gstatic.com";
+
+  // একই কনফিগারেশন এখানেও বসাতে হবে
+  const firebaseConfig = {
+  apiKey: "AIzaSyDl82HFBHboD6dxY1z2ezGnaCk9E42vDTU",
+  authDomain: "user-system-1.firebaseapp.com",
+  projectId: "user-system-1",
+  storageBucket: "user-system-1.firebasestorage.app",
+  messagingSenderId: "549621842960",
+  appId: "1:549621842960:web:f8a5367172715411af7695"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // ইউজার আসলেই লগইন অবস্থায় আছে কিনা তা চেক করা
+  onAuthStateChanged(auth, (user) => {
+      if (!user) {
+          // লগইন না থাকলে আবার লগইন পেজে পাঠিয়ে দেবে
+          window.location.href = "index.html";
+      }
+  });
+
+  // লগআউট ফাংশন
+  document.getElementById('btnLogout').addEventListener('click', () => {
+      signOut(auth).then(() => {
+          alert("লগআউট সফল হয়েছে!");
+          window.location.href = "index.html";
+      });
+  });
+</script>
+
+</body>
+</html>
