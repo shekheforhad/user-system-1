@@ -3,77 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase Auth - Login & Register</title>
-    <style>
-        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f4f4; }
-        .auth-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0,1); width: 300px; }
-        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
-        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; margin-bottom: 5px; }
-        button.secondary { background: #28a745; }
-    </style>
+    <title>Firebase Auth - Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="auth-container">
-    <h2>Firebase Auth System</h2>
+    <h2>Log In</h2>
     <input type="email" id="email" placeholder="Email" required>
     <input type="password" id="password" placeholder="Password" required>
     <button id="btnLogin">Log In</button>
-    <button id="btnSignup" class="secondary">Sign Up</button>
+    
+    <!-- সাইন-আপ পেজে যাওয়ার হাইপারলিঙ্ক -->
+    <p class="auth-link">অ্যাকাউন্ট নেই? <a href="signup.html">সাইনআপ করুন</a></p>
 </div>
 
-<!-- Firebase SDK core এবং Authentication মডিউল যুক্ত করা -->
-<script type="module">
-  // index.html ফাইলে ভুল ইমপোর্টের জায়গায় এটি ব্যবহার করুন:
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-  // আপনার Firebase থেকে পাওয়া আসল কনফিগারেশন এখানে বসান
-  const firebaseConfig = {
-  apiKey: "AIzaSyDl82HFBHboD6dxY1z2ezGnaCk9E42vDTU",
-  authDomain: "user-system-1.firebaseapp.com",
-  projectId: "user-system-1",
-  storageBucket: "user-system-1.firebasestorage.app",
-  messagingSenderId: "549621842960",
-  appId: "1:549621842960:web:f8a5367172715411af7695"
-};
-
-  // Firebase Initialize করা
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
-
-  // ১. সাইন-আপ বা রেজিস্ট্রেশন ফাংশন
-  document.getElementById('btnSignup').addEventListener('click', () => {
-      const email = emailInput.value;
-      const password = passwordInput.value;
-      
-      createUserWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-              alert("রেজিস্ট্রেশন সফল হয়েছে! এবার লগইন করুন।");
-          })
-          .catch((error) => {
-              alert("এরর: " + error.message);
-          });
-  });
-
-  // ২. লগইন ফাংশন
-  document.getElementById('btnLogin').addEventListener('click', () => {
-      const email = emailInput.value;
-      const password = passwordInput.value;
-      
-      signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-              alert("লগইন সফল হয়েছে!");
-              window.location.href = "dashboard.html"; // ড্যাশবোর্ডে নিয়ে যাবে
-          })
-          .catch((error) => {
-              alert("ভুল ইমেইল বা পাসওয়ার্ড! " + error.message);
-          });
-  });
-</script>
+<script type="module" src="login.js"></script>
 
 </body>
 </html>
