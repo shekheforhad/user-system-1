@@ -9,17 +9,40 @@ body {
 }
 .auth-container { 
     background: white; 
-    padding: 20px; 
+    padding: 25px; 
     border-radius: 8px; 
     box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-    width: 300px; 
+    width: 320px; 
 }
-input { 
-    width: 90%; 
+h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+input, .select-field { 
+    width: 93%; 
     padding: 10px; 
-    margin: 10px 0; 
+    margin: 8px 0; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
+    font-size: 14px;
+}
+.select-field {
+    width: 100%;
+    background: white;
+}
+.dob-container {
+    text-align: left;
+    margin: 8px 0;
+}
+.dob-container label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 4px;
+}
+.dob-container input {
+    width: 93%;
 }
 button { 
     width: 100%; 
@@ -29,13 +52,16 @@ button {
     border: none; 
     border-radius: 4px; 
     cursor: pointer; 
-    margin-bottom: 5px; 
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 button.secondary { 
     background: #28a745; 
 }
-
-/* হাইপারলিঙ্ক ডিজাইন */
+button:hover {
+    opacity: 0.9;
+}
 .auth-link {
     text-align: center;
     margin-top: 15px;
@@ -50,3 +76,4 @@ button.secondary {
 .auth-link a:hover {
     text-decoration: underline;
 }
+

@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Auth - Sign Up</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- সিএসএস ফাইল লিঙ্ক করা -->
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 
 <div class="auth-container">
     <h2>Sign Up</h2>
+    
+    <!-- নতুন ইনপুট ফিল্ডসমূহ -->
+    <input type="text" id="fullName" placeholder="Full Name" required>
     <input type="email" id="email" placeholder="Email" required>
     <input type="password" id="password" placeholder="Password" required>
+    
+    <!-- জেন্ডার সিলেক্টর ড্রপডাউন -->
+    <select id="gender" required class="select-field">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+    
+    <!-- জন্মতারিখ ইনপুট -->
+    <div class="dob-container">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+    </div>
+    
+    <!-- প্রোফাইল ছবির ইউআরএল -->
+    <input type="text" id="profilePic" placeholder="Profile Picture URL (Optional)">
+
     <button id="btnSignup" class="secondary">Sign Up</button>
     
-    <!-- লগইন পেজে ফিরে আসার হাইপারলিঙ্ক -->
     <p class="auth-link">ইতিমধ্যেই অ্যাকাউন্ট আছে? <a href="index.html">লগইন করুন</a></p>
 </div>
 
+<!-- জাভাস্ক্রিপ্ট ফাইল লিঙ্ক করা -->
 <script type="module" src="signup.js"></script>
 
 </body>

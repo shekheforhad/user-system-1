@@ -6,8 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-.dashboard-container {
+}.dashboard-container {
     background: white;
     padding: 30px;
     border-radius: 8px;
@@ -36,4 +35,118 @@ button {
 }
 button:hover {
     background: #c82333;
+}
+
+/* প্রোফাইল পিকচার স্টাইল */
+.profile-pic-container {
+    margin-bottom: 20px;
+}
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* ছবিটিকে গোল করার জন্য */
+    object-fit: cover;
+    border: 3px solid #28a745; /* ছবির চারপাশে সবুজ বর্ডার */
+}
+.user-info {
+    font-size: 16px;
+    color: #555555;
+    margin: 8px 0;
+}
+.secure-note {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 15px;
+}
+
+/* স্পিনারের ডিজাইন ও অ্যানিমেশন */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left-color: #28a745; /* ফায়ারবেসের থিমের সাথে মিল রেখে সবুজ রঙ */
+    animation: spin 1s linear infinite;
+    margin: 30px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* শুরুতেই কন্টেন্ট আড়াল রাখার ক্লাস */
+.hidden {
+    display: none;
+}
+
+/* কাস্টম পপ-আপ মোডাল ডিজাইন */
+.modal {
+    display: none; /* শুরুতে এটি সম্পূর্ণ লুকানো থাকবে */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* হালকা কালো ঝাপসা ব্যাকগ্রাউন্ড */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    animation: scaleUp 0.3s ease; /* মোডাল আসার সময় হালকা এনিমেশন */
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-buttons button {
+    width: 47%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+/* হ্যাঁ এবং না বোতামের আলাদা কালার */
+.btn-danger {
+    background-color: #dc3545;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
 }

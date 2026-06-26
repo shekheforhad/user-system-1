@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"; // ফায়ারস্টোর ইমপোর্ট
 
 const firebaseConfig = {
     apiKey: "AIzaSyDl82HFBHboD6dxY1z2ezGnaCk9E42vDTU",
@@ -11,4 +12,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app); // auth এক্সপোর্ট করা হলো
+export const auth = getAuth(app);
+export const db = getFirestore(app); // ডাটাবেজ 'db' এক্সপোর্ট করা হলো

@@ -10,13 +10,41 @@
 <body>
 
     <div class="dashboard-container">
-        <h1>স্বাগতম! আপনি সফলভাবে লগইন করেছেন।</h1>
-        <p>এটি আপনার সুরক্ষিত ড্যাশবোর্ড পেজ।</p>
-        <button id="btnLogout">Log Out</button>
+        <!-- স্পিনার / লোডার এলিমেন্ট -->
+        <div id="loadingSpinner" class="spinner"></div>
+
+        <!-- মূল কন্টেন্ট যা ডাটা লোড হওয়ার পর দেখাবে (শুরুতে আড়াল থাকবে) -->
+        <div id="dashboardContent" class="hidden">
+          <div class="profile-pic-container">
+            <!-- ছবির ওপর কার্সার পয়েন্টার দেওয়া হয়েছে যাতে ব্যবহারকারী বোঝে এখানে ক্লিক করা যাবে -->
+            <img id="userPic" src="https://picsum.photos/150" alt="Profile Picture" class="profile-img" style="cursor: pointer;" title="ছবির ওপরে ক্লিক করে পরিবর্তন করুন">
+            <p style="font-size: 11px; color: #888; margin-top: 5px; cursor: pointer;">ছবির ওপর ক্লিক করে লিংক দিয়ে পরিবর্তন করুন</p>
+          </div>
+
+            <h1 id="userGreeting">স্বাগতম!</h1>
+            <p id="userGender" class="user-info">জেন্ডার:</p>
+            <p id="userDob" class="user-info">জন্মতারিখ:</p>
+            
+            <p class="secure-note">এটি আপনার সুরক্ষিত ড্যাশবোর্ড পেজ।</p>
+            
+            <button id="btnLogout">Log Out</button>
+        </div>
     </div>
 
     <!-- ড্যাশবোর্ডের জাভাস্ক্রিপ্ট ফাইল লিঙ্ক করা (মডিউল হিসেবে) -->
     <script type="module" src="dashboard.js"></script>
+
+<!-- কাস্টম কনফার্মেশন পপ-আপ (Modal) -->
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+        <h3>লগআউট নিশ্চিত করুন</h3>
+        <p>আপনি কি নিশ্চিত যে আপনি লগআউট করতে চান?</p>
+        <div class="modal-buttons">
+            <button id="btnConfirmLogout" class="btn-danger">হ্যাঁ, লগআউট করুন</button>
+            <button id="btnCancelLogout" class="btn-secondary">না, ফিরে যান</button>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

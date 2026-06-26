@@ -1,0 +1,107 @@
+/* signup.css */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-color: #f0f2f5; 
+    margin: 0;
+}
+
+.auth-container { 
+    background: #ffffff; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 340px; 
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* সকল ইনপুট এবং সিলেক্ট ফিল্ডের কমন স্টাইল */
+input, .select-field { 
+    width: 100%; 
+    padding: 12px; 
+    margin: 10px 0; 
+    border: 1px solid #cccccc; 
+    border-radius: 6px; 
+    font-size: 14px;
+    box-sizing: border-box; /* উইডথ বা লেআউট ঠিক রাখার জন্য */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, .select-field:focus {
+    border-color: #28a745; /* ফোকাস করার সময় সবুজ বর্ডার */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+    outline: none;
+}
+
+.select-field {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+/* জন্মতারিখ কন্টেইনার স্টাইল */
+.dob-container {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.dob-container label {
+    font-size: 13px;
+    color: #666666;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* সাইন-আপ বাটন স্টাইল */
+button { 
+    width: 100%; 
+    padding: 12px; 
+    background-color: #28a745; /* আকর্ষণীয় সবুজ রঙ */
+    color: #ffffff; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.98); /* ক্লিক করার সময় হালকা দেবে যাওয়ার ইফেক্ট */
+}
+
+/* নিচের লগইন লিঙ্ক স্টাইল */
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.auth-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.auth-link a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
